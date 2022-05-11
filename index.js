@@ -14,7 +14,24 @@ fs.writeFile(path.join(__dirname, 'files', 'reply.txt'), 'Nice to meet you.', (e
     if (err) throw err;
     //console.log(data.toString());
     console.log('Write complete');
+
+    fs.appendFile(path.join(__dirname, 'files', 'reply.txt'), ' we Modify Text ', (err) => {
+        if (err) throw err;
+        //console.log(data.toString());
+        console.log('Append complete');
+
+        fs.rename(path.join(__dirname, 'files', 'reply.txt'), 'newName.txt', (err) => {
+            if (err) throw err;
+            //console.log(data.toString());
+            console.log('Rename complete');
+        })
+    })
+
+    
+    
 })
+
+
 
 
 
